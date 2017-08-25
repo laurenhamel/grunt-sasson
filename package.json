@@ -1,0 +1,20 @@
+{
+  "name": "grunt-sasson",
+  "version": "1.0.0",
+  "description": "Convert JSON to SASS with Grunt",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/laurenhamel/grunt-sasson.git"
+  },
+  "keywords": [
+    "sass",
+    "json",
+    "grunt"
+  ],
+  "author": "Lauren Hamel",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/laurenhamel/grunt-sasson/issues"
+  },
+  "homepage": "https://github.com/laurenhamel/grunt-sasson#readme"
+}
