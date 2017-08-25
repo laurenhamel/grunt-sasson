@@ -46,11 +46,12 @@ module.exports = function (grunt) {
     }).map(function (file) {
       
         return {
-          src: file.src.map(function (path) {
+          sass: file.src.map(function (path) {
             
               return toSass(path, grunt.file.read(path), options);
             
           }).join("\n"),
+          src: file.src,
           output: file.output,
           dest: file.dest
         };
@@ -65,7 +66,7 @@ module.exports = function (grunt) {
       
       var output = dirname + '_' + filename + '.scss';
       
-        grunt.file.write(output, file.src);
+        grunt.file.write(output, file.sass);
       
         grunt.log.writeln('File "' + output + '" created.');
       
