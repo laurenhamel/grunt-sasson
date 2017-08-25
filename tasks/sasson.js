@@ -12,7 +12,7 @@ var PATH = require('path');
 
 module.exports = function (grunt) {
 
-  grunt.registerMultiTask('grunt-sasson', 'Convert JSON to SASS with Grunt', function () {
+  grunt.registerMultiTask('sasson', 'Convert JSON to SASS with Grunt', function () {
     
     var options = this.options({
       useMap: true,
