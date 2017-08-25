@@ -87,4 +87,4 @@ grunt.loadNpmTasks('grunt-sasson');
 grunt.registerTask('default', ['sasson']);
 ```
 
-Note, the `output` section under files is _optional_ but can be used to change the filename from the one given as the `src` input. All SASS files will be stored in your `dest` folder and formatted as partials (`_output.scss`).
+The `output` section under files is _optional_ but can be used to change the filename from the one given as the `src` input. All SASS files will be stored in your `dest` folder and formatted as partials (`_output.scss`).
