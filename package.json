@@ -1,6 +1,6 @@
 {
   "name": "grunt-sasson",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Convert JSON to SASS with Grunt",
   "repository": {
     "type": "git",
