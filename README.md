@@ -9,13 +9,13 @@
 If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out the [Getting Started](http://gruntjs.com/getting-started) guide, as it explains how to create a [Gruntfile](http://gruntjs.com/sample-gruntfile) as well as install and use Grunt plugins. Once you're familiar with that process, you may install this plugin with this command:
 
 ```shell
-npm install grunt-contrib-sass --save-dev
+npm install grunt-sasson --save-dev
 ```
 
 Once the plugin has been installed, it may be enabled inside your Gruntfile with this line of JavaScript:
 
 ```js
-grunt.loadNpmTasks('grunt-contrib-sass');
+grunt.loadNpmTasks('grunt-sasson');
 ```
 
 
@@ -75,7 +75,6 @@ grunt.initConfig({
       },
       files: [{         
         src: ['input.json'],          
-        output: ['output'],
         dest: 'scss/'
       ]}
     }
@@ -87,4 +86,4 @@ grunt.loadNpmTasks('grunt-sasson');
 grunt.registerTask('default', ['sasson']);
 ```
 
-The `output` section under files is _optional_ but can be used to change the filename from the one given as the `src` input. All SASS files will be stored in your `dest` folder and formatted as partials (`_output.scss`).
+Sass files will be stored in your `dest` folder and formatted as partials (e.g., `_output.scss`), and the input file name will be applied to the output file.
