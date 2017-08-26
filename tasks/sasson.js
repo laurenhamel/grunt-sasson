@@ -39,36 +39,32 @@ module.exports = function (grunt) {
           return true;
           
         }),
-        output: file.output,
-        dest: file.dest
+        dest: file.src.map(function (path) { 
+
+          var dirname = PATH.resolve(file.dest),
+              basename = PATH.basename(path, '.json');
+
+          return dirname + '/_' + basename + '.scss';
+          
+        })
       };
       
     }).map(function (file) {
       
-        return {
-          sass: file.src.map(function (path) {
-            
-              return toSass(path, grunt.file.read(path), options);
-            
-          }).join("\n"),
-          src: file.src,
-          output: file.output,
-          dest: file.dest
-        };
+      return {
+        src: file.src.map(function (path) {
+
+          return toSass(path, grunt.file.read(path), options);
+
+        }).join("\n"),
+        dest: file.dest
+      };
       
-    }).forEach(function (file, index) {
+    }).forEach(function (file, index) { 
+     
+      grunt.file.write(file.dest[index], file.src);
       
-      var dirname = PATH.dirname(file.dest),
-          basename = PATH.basename(file.src, '.json'),
-          filename = basename;
-      
-      if( file.output && isArray(file.output) && file.output[index] ) filename = file.output[index];
-      
-      var output = dirname + '_' + filename + '.scss';
-      
-        grunt.file.write(output, file.sass);
-      
-        grunt.log.writeln('File "' + output + '" created.');
+      grunt.log.writeln('File "' + file.dest[index] + '" created.');
       
     });
     
